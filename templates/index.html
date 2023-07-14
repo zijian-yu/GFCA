@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GFCA Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="yuzijian1010@163.com"/>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="../static/css/flexslider.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="../static/img/favicon.ico">
+
+    {% block head %}
+    {% endblock %}
+</head>
+
+
+<body>
+<div id="wrapper" class="home-page">
+	<!-- start header -->
+
+    {% block header_gfca %}
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-Bistro=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index_url' %}"><img src="../static/img/logo.png" alt="logo"/></a>
+                </div>
+
+                <div class="navbar-collapse collapse ">
+                    {% block header %}
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{% url 'index_url' %}">Home</a></li>
+						<li><a href="{% url 'tools_url' %}">Tools</a></li>
+                        <li><a href="{% url 'gfca_url' %}">GFCA</a></li>
+                        <li><a href="{% url 'database_url' %}">Database</a></li>
+                        <li><a href="{% url 'help_url' %}">Help</a></li>
+                        <li><a href="{% url 'contact_url' %}">Contact</a></li>
+                    </ul>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+	</header>
+    {% endblock %}
+
+{% block body %}
+	<!-- end header -->
+	<section id="banner">
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="../static/img/slides/1.jpg" alt="" />
+                    <div class="flex-caption container">
+                        <h3>Gene Family Comparative Analysis Platform</h3>
+                        <p>A comprehensive and easy-to-operate platform for sequencing analysis of gene family comparative genomics</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="../static/img/slides/2.jpg" alt="" />
+                    <div class="flex-caption container">
+                        <h3>Gene Family Comparative Analysis Platform</h3>
+                        <p>You do not need to install software or be familiar with command line operations</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+	</section>
+
+
+	<section class="txt-area">
+	    <div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="aligncenter"><h1 class="aligncenter">Platform features</h1>At present, the platform can realize almost all the operation of gene family process, including sequence alignment, phylogenetic analysis, gene structure analysis, collinearity analysis, expression difference analysis, etc</div>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 0ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="../static/img/1.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Blastp visualization</h4>
+                                <p>SequenceServer is extensively used in private and public sector labs for comparative genomics.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 100ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="../static/img/2.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">JBrowse</h4>
+                                <p>JBrowse implements asynchronous loading of data through AJAX technology</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="200ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 200ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="../static/img/3.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Shinychromosome</h4>
+                                <p>Publication-quality images can be readily generated and annotated from user input using diverse widgets.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 300ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="../static/img/4.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">GSDS</h4>
+                                <p>It can be used to map clear gene structure and clearly show the location of exons, introns and UTR.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="400ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 400ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                 <img src="../static/img/5.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Phylogenetic tree</h4>
+                                <p>Phylogenetic trees summarize the most recent common ancestral relationship between a given group of organisms.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="500ms" style="visibility: visible; -webkit-animation-duration: 300ms; -webkit-animation-delay: 500ms;">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <img src="../static/img/7.png" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Sequence Alignment</h4>
+                                <p>Sequence alignment is the process of arranging sequences in a particular order to determine areas of similarity between them.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div>
+        </div>
+	</section>
+
+
+{% endblock %}
+
+{% block footer %}
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="widget">
+					<h5 class="widgetheading">Our Contact</h5>
+                    <address>
+                        School of Life Sciences / Center for Genomics and Computational Biology, North China University of Science and Technology,
+                    </address>
+					<p>
+						<i class="icon-envelope-alt"></i> Address info 21 Bohai Road,Caofeidian, Tangshan 063210, Hebei, China
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="widget">
+					<h5 class="widgetheading">Quick Links</h5>
+					<ul class="link-list">
+						<li><a href="https://www.ncbi.nlm.nih.gov/" target="_blank">National Center for Biotechnology Information</a></li>
+						<li><a href="http://pfam.xfam.org/" target="_blank">Protein families database</a></li>
+						<li><a href="https://swissmodel.expasy.org/">SWISS-MODEL</a></li>
+						<li><a href="https://www.embl.org/" target="_blank">EuropeanMolecular Biology Laboratory</a></li>
+						<li><a href="https://www.ddbj.nig.ac.jp/index-e.html" target="_blank">DNA Data Bank of Japan</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+                <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=57aafhhdjma&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
+            </div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="copyright">
+						<p>
+							<span>Copyright &copy; School of Life Sciences / Center for Genomics and Computational Biology.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+{% endblock %}
+
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+{% block js_much_database %}
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/jquery.easing.1.3.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.fancybox.pack.js"></script>
+    <script src="../static/js/jquery.fancybox-media.js"></script>
+    <script src="../static/js/portfolio/jquery.quicksand.js"></script>
+    <script src="../static/js/portfolio/setting.js"></script>
+    <script src="../static/js/jquery.flexslider.js"></script>
+    <script src="../static/js/animate.js"></script>
+    <script src="../static/js/custom.js"></script>
+{% endblock %}
+</body>
+</html>

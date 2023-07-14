@@ -1,0 +1,107 @@
+{% extends 'gfca_index.html' %}
+
+
+{% block section %}
+    <section id="inner-headline" xmlns="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">GFCA - PARAAT</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4  col-rg-4 ">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Ka_ks calculation analysis</span>
+                </h4>
+
+                <ul class="list-group mb-3">
+                    <a href="{% url 'paraat_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm  bg-light">
+                            <div class="text-success">
+                                    <h6 class="my-0">paraAT</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'kaks_calculator_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Kaks_calculator</h6>
+                                <small >Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="col-md-8  order-md-last">
+                <h4 class="mb-3">paraAT</h4>
+
+                <form action="paraat_run" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label for="state" class="form-label">The result file is saved as format</label>
+                            <select class="form-control" id="state" name="patten" required>
+                                <option value="axt">axt</option>
+                                <option value="fasta">fasta</option>
+                                <option value="paml">paml</option>
+                                <option value="codon">codon</option>
+                                <option value="clustal">clustal</option>
+                                <option value="optional">optional</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="formFile" class="form-label">Upload homologs file</label>
+                            <input class="form-control" type="file" id="formFile" name="homologs" required>
+                            <div class="invalid-feedback">
+                                File not uploaded
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="formFile" class="form-label">Upload cds file</label>
+                            <input class="form-control" type="file" id="formFile" name="cds" required>
+                            <div class="invalid-feedback">
+                                File not uploaded
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="formFile" class="form-label">Upload pep file</label>
+                            <input class="form-control" type="file" id="formFile" name="pep" required>
+                            <div class="invalid-feedback">
+                                File not uploaded
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    <input class="w-100 btn btn-primary btn-lg" type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

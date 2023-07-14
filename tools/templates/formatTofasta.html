@@ -1,0 +1,109 @@
+{% extends 'tools_index.html' %}
+
+
+{% block section %}
+    <section id="inner-headline" xmlns="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">TOOLS - Format_conversion</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4  col-rg-4 ">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">File processing</span>
+                </h4>
+
+                <ul class="list-group mb-3">
+                    <a href="{% url 'dotplot_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">DOTPLOT</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'formatTofasta_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm bg-light">
+                            <div class="text-success">
+                                    <h6 class="my-0">Format conversion</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="col-md-8  order-md-last">
+                <h4 class="mb-3">Format_conversion</h4>
+
+                <form action="formatTofasta_run" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <label for="formFile" class="form-label">Files to be converted</label>
+                            <input class="form-control" type="file" id="formFile" name="file1" required>
+                            <div class="invalid-feedback">
+                                File not uploaded
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">Upload File Format</label>
+                            <select class="form-control" id="state" name="patten" required>
+                                <option value="genbank">genbank</option>
+                                <option value="fasta">fasta</option>
+                                <option value="embl">embl</option>
+                                <option value="fastq">fastq</option>
+                                <option value="clustal">clustal</option>
+                                <option value="phylip">phylip</option>
+                                <option value="nexus">nexus</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">To the file format</label>
+                            <select class="form-control" id="state" name="patten_end" required>
+                                <option value="fasta">fasta</option>
+                                <option value="genbank">genbank</option>
+                                <option value="embl">embl</option>
+                                <option value="fastq">fastq</option>
+                                <option value="clustal">clustal</option>
+                                <option value="phylip">phylip</option>
+                                <option value="nexus">nexus</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    <input class="w-100 btn btn-primary btn-lg" type="submit" value="submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'gfca_index.html' %}
+
+
+{% block section %}
+    <section id="inner-headline" xmlns="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">GFCA - GSDS</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+
+            <!-- 侧边栏
+            <div class="col-md-4  col-rg-4 ">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Identification of Gene Family</span>
+                </h4>
+
+                <ul class="list-group mb-3">
+                    <a href="{% url 'pfam_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Pfam</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'meme_suit_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Meme_Suit</h6>
+                                <small >Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'codonw_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Codonw</h6>
+                                <small>Extraction sequence</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'cpgfinder_url' %}">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div class="text-success">
+                                <h6 class="my-0">Cpgfinder</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'gsds_url' %}">
+                        <li class="list-group-item d-flex justify-content-between bg-light">
+                            <div class="text-success">
+                                <h6 class="my-0">GSDS</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'sequenceserver_url' %}">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div class="text-success">
+                                <h6 class="my-0">Sequenceserver</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'dupgen_finder_url' %}">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div class="text-success">
+                                <h6 class="my-0">Dupgen_finder</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                </ul>
+            </div>
+            -->
+
+            <div class="col-md-12 order-md-last">
+                <iframe src="http://47.92.161.27:8529/" class="col-md-12  order-md-last" style="height: 750px">
+
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

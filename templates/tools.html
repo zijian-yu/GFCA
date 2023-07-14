@@ -1,0 +1,132 @@
+{% extends 'index.html' %}
+
+
+{% block header %}
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'index_url' %}">Home</a></li>
+        <li class="active"><a href="{% url 'tools_url' %}">Tools</a></li>
+        <li><a href="{% url 'gfca_url' %}">GFCA</a></li>
+        <li><a href="{% url 'database_url' %}">Database</a></li>
+        <li><a href="{% url 'help_url' %}">Help</a></li>
+        <li><a href="{% url 'contact_url' %}">Contact</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block body %}
+	<section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Tools</h2>
+                </div>
+            </div>
+        </div>
+	</section>
+
+
+	<section id="content">
+	    <div class="container">
+		    <div class="row">
+                <div class="col-lg-12">
+                    {% block form %}
+                    <ul class="portfolio-categ filter">
+                        <li class="all active"><a href="#">All</a></li>
+                        <li class="web"><a href="#" title="">File processing</a></li>
+                        <li class="icon"><a href="#" title="">Drawing graphics</a></li>
+                        <li class="graphic"><a href="#" title="">Format conversion</a></li>
+                    </ul>
+
+                    <div class="clearfix">
+                    </div>
+
+                    <div class="row">
+                        <section id="projects">
+                            <ul id="thumbs" class="portfolio">
+                                <!-- 点图 -->
+                                <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="icon">
+                                    <!-- 图片放大显示 - js <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="../static/img/works/1.jpg">
+                                        <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
+                                    </a>-->
+                                    <div>
+                                        <a href="{% url 'dotplot_url' %}">
+                                            <img src="../static/img/works/dotplot.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">Dotplot</h4>
+                                    </div>
+                                </li>
+
+                                <!-- 文件合并 -->
+                                <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="web">
+                                    <div>
+                                        <a href="{% url 'file_merge_url' %}">
+                                            <img src="../static/img/works/file_merge.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">File merge</h4>
+                                    </div>
+                                </li>
+
+                                <!-- 查找替换 -->
+                                <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="web">
+                                    <div>
+                                        <a href="{% url 'find_replace_url' %}">
+                                            <img src="../static/img/works/find_replace.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">Find alternative</h4>
+                                    </div>
+                                </li>
+
+                                <!-- 提取列信息 -->
+                                <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
+                                    <div>
+                                        <a href="{% url 'extract_row_url' %}">
+                                            <img src="../static/img/works/extract_row.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">Extract column</h4>
+                                    </div>
+                                </li>
+
+                                <!-- 格式转换 -->
+                                <li class="item-thumbs col-lg-3 photography" data-id="id-4" data-type="graphic">
+                                    <div>
+                                        <a href="{% url 'formatTofasta_url' %}">
+                                            <img src="../static/img/works/formattofasta.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">Format conversion</h4>
+                                    </div>
+                                </li>
+
+                                <!-- 删除重复 -->
+                                <li class="item-thumbs col-lg-3 photography" data-id="id-5" data-type="web">
+                                    <div>
+                                        <a href="{% url 'quchong_url' %}">
+                                            <img src="../static/img/works/quchong.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">Duplicate removal</h4>
+                                    </div>
+                                </li>
+                                
+                                <!-- cds转化为pep序列 -->
+                                <li class="item-thumbs col-lg-3 photography" data-id="id-5" data-type="web">
+                                    <div>
+                                        <a href="{% url 'cds_convert_pep_url' %}">
+                                            <img src="../static/img/works/quchong.png" alt="">
+                                        </a>
+                                        <h4 style="text-align: center">CDS convert PEP</h4>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </section>
+                    </div>
+                    {% endblock %}
+                </div>
+
+
+            </div>
+	    </div>
+	</section>
+
+{% endblock %}

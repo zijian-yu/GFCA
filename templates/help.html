@@ -1,0 +1,596 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="http://47.92.161.27:8000/static/images/favicon.ico">
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Modern Business - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+
+    <link href="http://47.92.161.27:8000/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+         .navbar-nav {
+             flex-direction: row
+        }
+        @media (min-width: 768px) {
+            .container > .navbar-header,
+            .container-fluid > .navbar-header,
+            .container > .navbar-collapse,
+            .container-fluid > .navbar-collapse {
+            }
+        }
+    </style>
+{% endblock %}
+
+
+{% block header %}
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'index_url' %}">Home</a></li>
+        <li><a href="{% url 'tools_url' %}">Tools</a></li>
+        <li><a href="{% url 'gfca_url' %}">GFCA</a></li>
+        <li><a href="{% url 'database_url' %}">Database</a></li>
+        <li class="active"><a href="{% url 'help_url' %}">Help</a></li>
+        <li><a href="{% url 'contact_url' %}">Contact</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block body %}
+
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Help</h2>
+                </div>
+            </div>
+        </div>
+	</section>
+
+    <div class="container page">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Help documentation and documentation requirements
+            <small></small>
+        </h1>
+
+        <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+            <!-- blast -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Blast</a>
+                    </h5>
+                </div>
+
+                <!--<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">-->
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-body">
+                        <img src="../static/img/blast_file.png" alt="">
+                        1.Select BLAST mode to upload database construction files and comparison files respectively.
+                        <br>
+                        2.The three parameters can be set by yourself.
+                        <br>
+                        3.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/blast/prot.fasta">protein</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/blast/nucl.fa">nucleic_acid</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- daimond -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Diamond</a>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="card-body">
+                        <img src="../static/img/diamond_file.png" alt="">
+                        1.This feature is roughly the same as Blast, except that Diamond runs faster.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/blast/prot.fasta">protein</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/blast/nucl.fa">nucleic_acid</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- sequence_screening -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThree">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">sequence_screening</a>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="card-body">
+                        <img src="../static/img/sequence_screening_file.png" alt="">
+                        1.The ID file is the ID file in the BLAST or Diamond result compression package. The user can upload CDS, PEP and GFF files of the species and extract the corresponding sequence according to the ID file.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/sequence_screening/cds.fasta">CDS_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/sequence_screening/pep.fasta">PEP_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/sequence_screening/gff.gff">GFF_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/sequence_screening/id_file.txt">ID_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hmmer -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingFour">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Hmmer</a>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="card-body">
+                        <img src="../static/img/hmmer_file.png" alt="">
+                        1.HMMER is a bioinformatics software that analyzes gene sequences and can quickly determine how similar two sequences are.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/hmmer/globins4.sto">model_comparison_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/hmmer/globins45.fa">Sequence_database_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pfam -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingFive">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Pfam</a>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                    <div class="card-body">
+                        <img src="../static/img/pfam_file.png" alt="">
+                        1.Pfam is a database of protein families, which are classified into different families based on multiple sequence alignment results and hidden Markov models.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/pfam/AT.fasta">pfam_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme_suit -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingSix">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Meme_suit</a>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                    <div class="card-body">
+                        <img src="../static/img/meme_suit_file.png" alt="">
+                        1.The most commonly used tool for gene family analysis or other conserved sequence regions (motif or pattern) that need to display a set of sequences simultaneously is MEME suite.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/meme/gm_last.fasta">meme_suit_file</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Codonw -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingSeven">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">Codonw</a>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+                    <div class="card-body">
+                        <img src="../static/img/conodw_file.png" alt="">
+                        1.Codon bias analysis tool.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/codonw/input.fasta">codonw_file</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cpgfinder -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingEight">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">Cpgfinder</a>
+                    </h5>
+                </div>
+                <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+                    <div class="card-body">
+                        <img src="../static/img/cpgfinder_file.png" alt="">
+                        1.CpG islands are defined as stretches of DNA 500–1500 bp long with a CG: GC ratio of more than 0.6, and they are normally found at promoters and contain the 5′ end of the transcript.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/cpgfinder/cpgfinder_input.txt">Cpgfinder_file</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GSDS -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingNine">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">GSDS</a>
+                    </h5>
+                </div>
+                <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+                    <div class="card-body">
+                        <img src="../static/img/gsds_file.png" alt="">
+                        1.GSDS is an online service providing an all-English interface for displaying the composition and location of gene exons, introns, and conserved elements.
+                    </div>
+                </div>
+            </div>
+
+            <!-- sequencerserver -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">sequencerserver</a>
+                    </h5>
+                </div>
+                <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen">
+                    <div class="card-body">
+                        <img src="../static/img/sequenceserver_file.png" alt="">
+                        1.SequenceServer is extensively used in private and public sector labs for cloning, comparative genomics, gene curation, design of diagnostic markers and many other applications. Our software has helped research on humans, viruses, bacteria, agricultural plants and animals, and dozens of emerging model organisms.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dupgen_finder -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingEleven">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">Dupgen_finder</a>
+                    </h5>
+                </div>
+                <div id="collapseEleven" class="collapse" role="tabpanel" aria-labelledby="headingEleven">
+                    <div class="card-body">
+                        <img src="../static/img/dupgen_finder_file.png" alt="">
+                        1.A tool for the classification and identification of genomic gene replication.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/dupgen_finder/Ath.gff">Targen_Gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Targen_Blat_output_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath_Nnu.gff">Target_and_outgroup_species_gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Target_and_outgroup_Blast_output_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cd_hit -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwelve">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">Cd_hit</a>
+                    </h5>
+                </div>
+                <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                    <div class="card-body">
+                        <img src="../static/img/cd_hit_file.png" alt="">
+                        1.Cd-hit is a tool for protein or nucleic acid sequence clustering. Sequences are clustered according to their similarity to remove redundant sequences. It is generally used to construct non-redundant data sets for subsequent experimental analysis.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/dupgen_finder/Ath.gff">Targen_Gene_position_file</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- string -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThirteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">String</a>
+                    </h5>
+                </div>
+                <div id="collapseThirteen" class="collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                    <div class="card-body">
+                        <img src="../static/img/dupgen_finder_file.png" alt="">
+                        1.A tool for the classification and identification of genomic gene replication.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/dupgen_finder/Ath.gff">Targen_Gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Targen_Blat_output_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath_Nnu.gff">Target_and_outgroup_species_gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Target_and_outgroup_Blast_output_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- heatmap -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingFourteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">Heatmap</a>
+                    </h5>
+                </div>
+                <div id="collapseFourteen" class="collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                    <div class="card-body">
+                        <img src="../static/img/dupgen_finder_file.png" alt="">
+                        1.A tool for the classification and identification of genomic gene replication.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/dupgen_finder/Ath.gff">Targen_Gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Targen_Blat_output_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath_Nnu.gff">Target_and_outgroup_species_gene_position_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/dupgen_finder/Ath.blast">Target_and_outgroup_Blast_output_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sequence_Alignment -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingFifteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">Sequence_Alignment</a>
+                    </h5>
+                </div>
+                <div id="collapseFifteen" class="collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                    <div class="card-body">
+                        <img src="../static/img/sequence_alignment_file.png" alt="">
+                        1.Sequence alignment refers to the alignment of DNA,RNA, or protein sequences according to similarity, in which similar bases/amino acids are aligned in the same column by inserting gaps in the sequences.
+                        <br>
+                        2.Three multi-sequence tools are available.
+                        <br>
+                        3.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/sequence_alignment/input_prot.fasta">input_protein_file</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCscanX -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingSixteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">MCscanX</a>
+                    </h5>
+                </div>
+                <div id="collapseSixteen" class="collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                    <div class="card-body">
+                        <img src="../static/img/mcscanx_file.png" alt="">
+                        1.It is convenient for users to find collinearity and synteny relationship, and clear multiple alignment can be seen from collinearity block.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/mcscanx/at_vv.blast">blast_result_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/mcscanx/at_vv.gff">species_gff_file</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colinearscan -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingSeventeen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">Colinearscan</a>
+                    </h5>
+                </div>
+                <div id="collapseSeventeen" class="collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+                    <div class="card-body">
+                        <img src="../static/img/colinearscan_file.png" alt="">
+                        1.ColinearScan is mainly based on dynamic programming algorithm and genetic collinearity method to detect homologous chromosome fragments.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/ColinearScan/ZM-OS.filter.blast">target_database</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/ColinearScan/ZM.gff">FASTA_sequence1</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/ColinearScan/OS.gff.blast">FASTA_sequence2</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orthomcl -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingEighteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">Orthomcl</a>
+                    </h5>
+                </div>
+                <div id="collapseEighteen" class="collapse" role="tabpanel" aria-labelledby="headingEighteen">
+                    <div class="card-body">
+                        <img src="../static/img/colinearscan_file.png" alt="">
+                        1.ColinearScan is mainly based on dynamic programming algorithm and genetic collinearity method to detect homologous chromosome fragments.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/ColinearScan/ZM-OS.filter.blast">target_database</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/ColinearScan/ZM.gff">FASTA_sequence1</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/ColinearScan/OS.gff.blast">FASTA_sequence2</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orthofinder -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingNineteen">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">Orthofinder</a>
+                    </h5>
+                </div>
+                <div id="collapseNineteen" class="collapse" role="tabpanel" aria-labelledby="headingNineteen">
+                    <div class="card-body">
+                        <img src="../static/img/orthofinder.png" alt="">
+                        1.Important functions include finding orthogonal groups and lineal homologues, inferring the root cause trees of all orthogonal groups, and identifying all gene duplication events in those gene trees. It also extrapolates the rooted species tree for the species it analyses and matches gene duplication events from the gene tree to branches of the species tree.
+                        <br>
+                        2.All four sample files are upload files, uploading multiple files at once.
+                        <br>
+                        <a href="../static/test_file/orthofinder/Mycoplasma_agalactiae.faa">Mycoplasma_agalactiae</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/orthofinder/Mycoplasma_gallisepticum.faa">Mycoplasma_gallisepticum</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/orthofinder/Mycoplasma_genitalium.faa">Mycoplasma_genitalium</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/orthofinder/Mycoplasma_hyopneumoniae.faa">Mycoplasma_hyopneumoniae</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ParaAT -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">ParaAT</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty" class="collapse" role="tabpanel" aria-labelledby="headingTwenty">
+                    <div class="card-body">
+                        <img src="../static/img/paraat_file.png" alt="">
+                        1.Compared with clustal+ other scripting methods, this software has a high degree of automation. It automatically compares proteins first and then translates the protein sequence results back into corresponding nucleic acids, realizing parallel comparison of multiple groups of DNA sequences of homologous coding proteins.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/paraAT/test.homologs">homologs_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/paraAT/test.cds">cds_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/paraAT/test.pep">pep_file</a>&nbsp;&nbsp;
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kaks_calculator -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_one">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_one" aria-expanded="false" aria-controls="collapseTwenty_one">Kaks_calculator</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_one" class="collapse" role="tabpanel" aria-labelledby="headingTwenty_one">
+                    <div class="card-body">
+                        <img src="../static/img/kaks_calculator_file.png" alt="">
+                        1.Kaks_calculator can be used to calculate KA, KS values, and then differentiation time points.
+                        <br>
+                        2.The following is an example file.
+                        <br>
+                        <a href="../static/test_file/kaks_calculator/input.axt">input_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- fasttree -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_two">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_two" aria-expanded="false" aria-controls="collapseTwenty_two">Fasttree</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_two" class="collapse" role="tabpanel" aria-labelledby="headingTwenty_two">
+                    <div class="card-body">
+                        <img src="../static/img/fasttree_file.png" alt="">
+                        1.FastTree is based on the maximum likelihood method to build evolutionary tree software, its biggest characteristic is fast running, supporting millions of sequences of tree building tasks.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/fasttree/input_file.fasta">Fasttree_Input_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iq_tree -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_three">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_three" aria-expanded="false" aria-controls="collapseTwenty_three">Iq_tree</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_three" class="collapse" role="tabpanel" aria-labelledby="headingTwenty_three">
+                    <div class="card-body">
+                        <img src="../static/img/iq_tree_file.png" alt="">
+                        1.Iq-tree is a Tree building software based on the maximum likelihood method (ML). It is accurate, fast and flexible, especially suitable for the phylogenetic analysis of big data.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/iqtree2/AT.phylip">iqtree_input_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- phyml -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_four">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_four" aria-expanded="false" aria-controls="collapseTwenty_four">phyml</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_four" class="collapse" role="tabpanel" aria-labelledby="headingTwenty_four">
+                    <div class="card-body">
+                        <img src="../static/img/phyml_file.png" alt="">
+                        1.PhyML is an old software built by ML method. Compared with RaxML, which only supports GTR model for nucleotide replacement model, PhyML supports more nucleotide models.
+                        <br>
+                        2.The sample file is as follows.
+                        <br>
+                        <a href="../static/test_file/phyml/cytb.phylip">Phyml_input_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- paml -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_five">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_five" aria-expanded="false" aria-controls="collapseTwenty_five">paml</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_five" class="collapse" role="tabpanel" aria-labelledby="headingTwenty_five">
+                    <div class="card-body">
+                        <img src="../static/img/paml_file.png" alt="">
+                        1.PAML (Phylogenetic Analysis by Maximum Likelihood) is a software that uses DNA or Protein data for Phylogenetic Analysis using Maximum Likelihood.
+                        <br>
+                        2.The following is an example file.
+                        <br>
+                        <a href="../static/test_file/paml/abglobin.nuc">abglobin_nuc_file</a>&nbsp;&nbsp;
+                        <a href="../static/test_file/paml/abglobin.trees">abglobin_tree_file</a>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- daimond -->
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwenty_six">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty_six" aria-expanded="false" aria-controls="collapseTwenty_six">Visitors</a>
+                    </h5>
+                </div>
+                <div id="collapseTwenty_six" class="collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                    <div class="card-body">
+
+                    </div>
+                    <div>
+                        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5t8opm56sug&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="http://47.92.161.27:8000/static/vendor/jquery/jquery.min.js"></script>
+    <script src="http://47.92.161.27:8000/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock %}
+
+
+
+

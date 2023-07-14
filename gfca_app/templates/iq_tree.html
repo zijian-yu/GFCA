@@ -1,0 +1,117 @@
+{% extends 'gfca_index.html' %}
+
+
+{% block section %}
+    <section id="inner-headline" xmlns="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">GFCA - IQ_TREE</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4  col-rg-4 ">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Phylogeny analysis</span>
+                </h4>
+
+                <ul class="list-group mb-3">
+                    <a href="{% url 'fasttree_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Fasttree</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'iq_tree_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm bg-light">
+                            <div class="text-success">
+                                    <h6 class="my-0">IQ_tree</h6>
+                                <small >Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'phyml_url' %}">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="text-success">
+                                    <h6 class="my-0">Phyml</h6>
+                                <small>Extraction sequence</small>
+                            </div>
+                        </li>
+                    </a>
+
+                    <a href="{% url 'paml_url' %}">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div class="text-success">
+                                <h6 class="my-0">Paml</h6>
+                                <small>Sequence alignment</small>
+                            </div>
+                        </li>
+                    </a>
+
+                </ul>
+            </div>
+
+            <div class="col-md-8  order-md-last">
+                <h4 class="mb-3">Iq_tree</h4>
+
+                <form action="iq_tree_run" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3">
+
+                        <div class="col-sm-12">
+                            <label for="formFile" class="form-label">Upload matching file</label>
+                            <input class="form-control" type="file" id="formFile" name="file" required>
+                            <div class="invalid-feedback">
+                                File not uploaded
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">Alternative model</label>
+                            <select class="form-control" id="state" name="patten" required>
+                                <option value="MFP">MFP</option>
+                                <option value="TIM2+I+G">TIM2+I+G</option>
+                                <option value="MF">MF</option>
+                                <option value="MFP+ASC">MFP+ASC</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">Fast BS value</label>
+                            <input type="text" class="form-control" id="firstName" name="bs_num" value="1000" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    <input class="w-100 btn btn-primary btn-lg" type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

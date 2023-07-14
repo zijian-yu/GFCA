@@ -1,0 +1,251 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    <ul class="nav navbar-nav">
+        <li><a href="index">Home</a></li>
+        <li><a href="tools">Tools</a></li>
+        <li><a href="gfca">GFCA</a></li>
+        <li class="active"><a href="database">Database</a></li>
+        <li><a href="help">Help</a></li>
+        <li><a href="contact">Contact</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block head %}
+    <script src="../static/js/jquery-3.5.1.js"></script>
+        <script src="../static/js/jquery.dataTables.min.js"></script>
+        <link href="../static/css/jquery.dataTables.css" rel="stylesheet" />
+        <link href="../static/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+        <script type="text/javascript" class="init">
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
+{% endblock %}
+
+
+{% block body %}
+
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Database</h2>
+                </div>
+            </div>
+        </div>
+	</section>
+
+    <div class="container" style=" padding-top: 20px">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Species names</th>
+                    <th>Pbbr</th>
+                    <th>A subunits</th>
+                    <th>B subunits</th>
+                    <th>B' subunits</th>
+                    <th>B'' subunits</th>
+                    <th>C subunits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arachis_duranensis</td>
+                    <td><i>Adu</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Adu A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Adu B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Adu B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Adu B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Adu C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Arachis_hypogaea</td>
+                    <td><i>Ahy</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Ahy A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Ahy B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Ahy B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Ahy B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Ahy C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Arachis_ipaensis</td>
+                    <td><i>Aip</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Aip A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Aip B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Aip B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Aip B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Aip C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Cajanus_cajan</td>
+                    <td><i>Cca</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Cca A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Cca B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca C subunits</a></td>
+                </tr>
+
+                <tr>
+                    <td>Cicer_arietinum</td>
+                    <td><i>Car</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Car A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Car B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Car B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Car B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Car C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Glycine_max</td>
+                    <td><i>Gma</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Gma A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Gma B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gma B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gma B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gma C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Glycine_soja</td>
+                    <td><i>Gso</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Gso A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Gso B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gso B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gso B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Gso C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Lotus_japonicus</td>
+                    <td><i>Lja</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Lja A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Lja B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lja B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lja B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lja C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Lupinus_angustifolius</td>
+                    <td><i>Lan</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Lan A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Lan B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lan B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lan B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Lan C subunits</a></td>
+                </tr>
+
+                <tr>
+                    <td>Medicago_truncatula</td>
+                    <td><i>Mtr</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Mtr A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Mtr B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Mtr B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Mtr B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Mtr C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Phaseolus_vulgaris</td>
+                    <td><i>Pvu</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Pvu A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Pvu B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Pvu B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Pvu B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Pvu C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Trifolium_pratense</td>
+                    <td><i>Tpr</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Tpr A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Tpr B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Tpr B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Tpr B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Tpr C subunits</a></td>
+                </tr>
+
+                <tr>
+                    <td>Vigna_angularis</td>
+                    <td><i>Van</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Van A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Van B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Van B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Van B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Van C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Vigna_radiata</td>
+                    <td><i>Vra</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Vra A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Vra B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vra B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vra B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vra C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Vigna_unguiculata</td>
+                    <td><i>Vun</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Vun A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Vun B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vun B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vun B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vun C subunits</a></td>
+                </tr>
+
+                <tr>
+                    <td>Vitis_vinifera</td>
+                    <td><i>Vvi</i></td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Vvi A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Vvi B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vvi B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vvi B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Vvi C subunits</a></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>Vitis_vinifera</td>
+                    <td>iVvi</td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Cca A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Cca B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Vitis_vinifera</td>
+                    <td>Vvi</td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Cca A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Cca B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Vitis_vinifera</td>
+                    <td>Vvi</td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Cca A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Cca B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca C subunits</a></td>
+                </tr>
+                <tr>
+                    <td>Vitis_vinifera</td>
+                    <td>Vvi</td>
+                    <td><a href="../../../static/data/gff/Adu.gff">Cca A subunits</a></td>
+                    <td><a href="../../../static/data/cds/Adu.cds">Cca B subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca B'' subunits</a></td>
+                    <td><a href="../../../static/data/pep/Adu.pep">Cca C subunits</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+{% block js_much_database %}
+
+{% endblock %}
